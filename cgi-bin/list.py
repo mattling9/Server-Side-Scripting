@@ -9,7 +9,7 @@ def htmlTop(html):
             </head>
             <body>
 
-            <table style="width:100%"; border="1"; padding="3px" >
+            <table style="width:30%" border="1" padding="10px" >
               <tr>
                 <th>Name</th>
                 <th>Price</th>		
@@ -59,10 +59,13 @@ def getProductHtml():
             drinkType = str(item[3])
             html += ("""<tr>
                             <td>"""+ name +"""</td>
-                            <td>"""+ price +"""</td>		
+                            <td>&pound"""+ price +"""</td>		
                             <td>"""+ drinkType +"""</td>
                         </tr>
                     """)
+        html += (""" <br><form method="post" action="form.py">
+                    <input type="submit" value="Go Back..">
+                    </form><br><br>""")
     return html
     
 def main():
